@@ -24,6 +24,7 @@
     <ProjectGuid>{74f51400-1d4b-4032-9b9e-1afbed4dea3b}</ProjectGuid>
     <RootNamespace>duplicatelistlinkedsingle</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>duplicar_una_lista</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
