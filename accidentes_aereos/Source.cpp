@@ -7,12 +7,13 @@
 #include <fstream>
 #include <utility>
 #include <vector>
+#include <stack>
 
 
 // función que resuelve el problema
 std::string resolver(std::vector<std::pair<std::string, int>> vector) {
     std::string resul = "NO HAY";
-
+    //std::stack<>
     bool encontrado = false;
     int i = (vector.size() - 1);
     while (!encontrado && i >= 0) {
