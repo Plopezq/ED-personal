@@ -11,21 +11,26 @@
 
 
 // función que resuelve el problema
-std::string resolver(std::vector<std::pair<std::string, int>> vector) {
-    std::string resul = "NO HAY";
-    //std::stack<>
-    bool encontrado = false;
-    int i = (vector.size() - 1);
-    while (!encontrado && i >= 0) {
-        if (vector[i].second > vector[vector.size() - 1].second) {//mas victimas
-            resul = vector[i].first;
-            encontrado = true;
-            std::cout << std::endl;
+void resolver(std::vector<std::pair<std::string, int>> vector) {
+    std::stack<std::pair<std::string, int>> pila; //pila de los accidentes
+    //pila.push(vector[0]);
+    for (int i = 0; i < vector.size(); i++) //recorremos el vector
+    {
+        pila.push(vector[i]); //accidente a tratar
+        while (!pila.empty() && (pila.top().second <= vector[i].second) ) //bucle while para la pila
+        {
+            //elimino de la pila
+            pila.pop();
         }
-        i--;
+        // escribir sol
+        if (pila.empty()) {
+            std::cout << "NO HAY" << std::endl;
+        }
+        else {
+            std::cout << pila.top().first << std::endl; //fecha que tiene que ser
+        }
+        pila.push(vector[i]); //accidente a tratar
     }
-
-    return resul;
 }
 
 // Resuelve un caso de prueba, leyendo de la entrada la
@@ -42,16 +47,12 @@ bool resuelveCaso() {
         std::pair<std::string, int> datos;
         std::cin >> datos.first;
         std::cin >> datos.second;
-
         vector.push_back(datos);
-
-        std::string sol = resolver(vector);
-        // escribir sol
-        std::cout << sol << std::endl;
     }
 
-    std::cout << "---" << std::endl;
+    resolver(vector);
 
+    std::cout << "---" << std::endl;
 
     return true;
 
