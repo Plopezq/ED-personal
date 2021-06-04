@@ -20,7 +20,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="list_linked_double.h">
+    <ClInclude Include="lista.h">
       <Filter>Resource Files</Filter>
     </ClInclude>
   </ItemGroup>

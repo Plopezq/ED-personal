@@ -22,7 +22,7 @@
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="list_linked_double.h" />
+    <ClInclude Include="lista.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="1.in" />

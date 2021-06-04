@@ -5,10 +5,10 @@
 #include <iostream>
 #include <iomanip>
 #include <fstream>
-#include "list_linked_double.h"
+#include "lista.h"
 
 // función que resuelve el problema
-void resolver(ListLinkedDouble<int> &lista) {
+void resolver(ListLinkedDouble &lista) {
 
     lista.interchange2();
 
@@ -24,10 +24,10 @@ bool resuelveCaso() {
         return false;
 
     int aux;
-    ListLinkedDouble<int> lista;
+    ListLinkedDouble lista;
     for (int i = 0; i < numElem; i++) {
         std::cin >> aux;
-        lista.push_back(aux);
+        lista.push_back(std::to_string(aux));
     }
     resolver(lista);
 
