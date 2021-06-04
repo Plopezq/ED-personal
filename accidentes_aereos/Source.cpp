@@ -6,7 +6,7 @@
 #include <iomanip>
 #include <fstream>
 #include <utility>
-#include<vector>
+#include <vector>
 
 
 // función que resuelve el problema
