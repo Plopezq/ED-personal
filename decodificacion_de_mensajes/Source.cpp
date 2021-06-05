@@ -17,9 +17,12 @@ string resolver(string frase) {
     queue<char> cola;
     stack<char> pila;
     //PRIMERA FASE
-    for (int i = 0; i < frase.length(); i+=2) {
+    for (int i = 0; i < frase.length(); i += 2) {
         cola.push(frase[i]);
         pila.push(frase[i + 1]);
+    }
+    if (frase.length() % 2 != 0) {//Si es impar el tamanyo de la frase
+        pila.pop();
     }
     while (!pila.empty()) {
         cola.push(pila.top());
