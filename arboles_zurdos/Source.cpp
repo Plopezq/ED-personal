@@ -35,6 +35,7 @@ pair<bool, int> es_zurdo(const BinTree<T>& t) {
 	}
 	auto [es_zurdo_izq, num_nodos_izq] = es_zurdo(t.left());
 	auto [es_zurdo_der, num_nodos_der] = es_zurdo(t.right());
-	return  es_zurdo_izq  && es_zurdo_der
+	bool es_zurdo = es_zurdo_izq && es_zurdo_der
 		&& num_nodos_izq > num_nodos_der;
+	int num_nodos = 1 + num_nodos_izq + num_nodos_der;
 }
