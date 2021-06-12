@@ -145,6 +145,9 @@
   <ItemGroup>
     <ClInclude Include="bintree.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="datos.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

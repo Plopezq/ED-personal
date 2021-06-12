@@ -18,12 +18,12 @@ pair<int, int> resolver(const BinTree<char> &arbol) {
     auto [camino_max_iz, altura_iz] = resolver(arbol.left());
     auto [camino_max_der, altura_der] = resolver(arbol.right());
 
-    int camino_max = max(max(camino_max_iz, camino_max_der),
-                        1 + altura_iz + altura_der);
-    int altura = 1 + max(altura_iz, altura_der);
+    int camino_max = max(max(camino_max_iz, camino_max_der),//no pasa por la raiz
+                        1 + altura_iz + altura_der);//pasa por la raiz
+    int altura_max = 1 + max(altura_iz, altura_der);
 
 
-    return{camino_max, altura};
+    return{camino_max, altura_max };
 }
 
 // Resuelve un caso de prueba, leyendo de la entrada la
