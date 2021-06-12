@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{5a472ccb-78f8-47e0-9696-4a786f155c59}</ProjectGuid>
-    <RootNamespace>arbolesdensos</RootNamespace>
+    <ProjectGuid>{a06a7bdf-fe0d-4197-ba49-192715586a1d}</ProjectGuid>
+    <RootNamespace>labarreradelosprimos</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -141,6 +141,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="bintree.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="datos.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
