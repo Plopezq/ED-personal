@@ -24,7 +24,7 @@ pair<int, int> aux(const BinTree<T>& arbol) {
         }
         else {
             if (n_equipos_izq == 0 && n_equipos_der == 0) {
-                return { 1, arbol.root() };
+                return { 1, arbol.root() }; //Sale un equipo ya que no hay
             }
             else {
                 return { n_equipos_izq + n_equipos_der, max(max_rescatados_izq, max_rescatados_der) };
