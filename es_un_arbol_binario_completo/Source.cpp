@@ -12,19 +12,19 @@ template<typename T>
 pair<bool, int> es_completo_auxiliar(const BinTree<T>& a) {
 //devuelve si es completo y la altura
     if (a.empty()) {
-        return { true, 0 };
+        return{ true, 0 };
     }
     else {
         auto [es_completo_izq, altura_izq] = es_completo_auxiliar(a.left());
         auto [es_completo_der, altura_der] = es_completo_auxiliar(a.right());
 
-
-        bool es_completo = es_completo_izq && es_completo_der
+        bool completo = es_completo_izq && es_completo_der 
             && altura_izq == altura_der;
-        int altura = 1 + max(altura_izq, altura_der);
+        int altura = 1 + altura_izq + altura_der;
 
-        return {es_completo, altura};
+        return { completo, altura };
     }
+    
 }
 
 template<typename T>
@@ -60,9 +60,6 @@ int main() {
 
     return 0;
 }
-
-
-
 
 
 
