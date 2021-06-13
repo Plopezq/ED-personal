@@ -30,8 +30,8 @@ tuple<bool, int, int> es_ABB(const BinTree<char>& arbol) {
 
 // función que resuelve el problema
 bool resolver(const BinTree<char> &arbol) {
-
-    return get<0>(es_ABB(arbol));
+    auto[bin, min, max] = es_ABB(arbol);
+    return bin;
 }
 
 // Resuelve un caso de prueba, leyendo de la entrada la

@@ -25,9 +25,9 @@ tuple<bool, int, int> ascendente_denso_rec(const BinTree<int>& tree) {
 
 bool ascendente_denso_2(const BinTree<int> &tree) {
 	bool denso = true;
-	int anterior;
+	int anterior = -1;
 	tree.inorder([&anterior, &denso](int x) {
-		if (x != anterior + 1) {
+		if (anterior != -1 && x != anterior + 1) {
 			denso = false;
 		}
 		anterior = x;
