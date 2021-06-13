@@ -267,16 +267,18 @@ inline std::pair<bool, T> SetTree<T, ComparatorFunction>::lower_bound_aux(Node *
         return { false, -1 };
     }
     else {
-        if (root != nullptr && root->elem > e) {//BUSCO EN LA RAMA DERECHA
+        if (root != nullptr && root->elem < e) {//BUSCO EN LA RAMA DERECHA
             auto [hay, valor] = lower_bound_aux(root->right, e);
+
             if (root->elem >= e) return{ true, root->elem };
-            else return { false, root->elem };
+            else return { hay, valor };
             //return{ hay, valor };
         }
         else if(root != nullptr) {//BUSCO EN LA RAMA IZQUIERDA
             auto [hay, valor] = lower_bound_aux(root->left, e);
+
             if (root->elem >= e) return{ true, root->elem };
-            else return { false, root->elem };
+            else return { hay, valor };
         }
     }
 }
