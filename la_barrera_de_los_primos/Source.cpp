@@ -25,9 +25,32 @@ bool es_multiplo_7(int numero) {
 
 // función que resuelve el problema
 pair<int, int> resolver(BinTree<char> const& arbol) {
+    //numero y profundidad
+    if (arbol.empty()) {//arbol vacio
+        return{ -1, 0 };
+    }
+    else if (arbol.left().empty() && arbol.right().empty()) {
+        return { arbol.root(), 1 };
+    }
+    else {
+        auto [num_izq, prof_izq] = resolver(arbol.left());
+        auto [num_der, prof_der] = resolver(arbol.right());
 
-    return { -1, -1 };
 
+        int num;
+        int prof;
+        if (prof_izq <= prof_der) {
+            num = num_izq;
+            prof = prof_izq + 1;
+            return { num, prof };
+        }
+        else {
+            num = num_der;
+            prof = prof_der + 1;
+            return { num, prof };
+        }
+
+    }
 }
 
 // Resuelve un caso de prueba, leyendo de la entrada la
@@ -37,10 +60,9 @@ void resuelveCaso() {
     BinTree<char> arbol = BinTree<char>();
     arbol = read_tree<char>(cin);
 
-    cout << es_multiplo_7(21);
-    //pair<int, int> sol = resolver(arbol);
+    auto [num, prof] = resolver(arbol);
     // escribir sol
-
+    cout << num << " " << prof << endl;
 
 }
 
