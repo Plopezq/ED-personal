@@ -18,18 +18,14 @@ pair<int, int> aux(const BinTree<T>& arbol) {
     else{
         auto [n_equipos_izq, max_rescatados_izq] = aux(arbol.left());
         auto [n_equipos_der, max_rescatados_der] = aux(arbol.right());
-
-        if (arbol.root() == 0) {
-            return { n_equipos_izq + n_equipos_der, max(max_rescatados_izq, max_rescatados_der) };
+      
+        if (n_equipos_izq + n_equipos_der == 0 && arbol.root() > 0) {
+            return { 1, arbol.root() + max(max_rescatados_izq, max_rescatados_der) }; //Sale un equipo ya que no hay y se necesitan
         }
         else {
-            if (n_equipos_izq == 0 && n_equipos_der == 0 && arbol.root() != 0) {
-                return { 1, arbol.root() }; //Sale un equipo ya que no hay y se necesitan
-            }
-            else {
-                return { n_equipos_izq + n_equipos_der, max(max_rescatados_izq, max_rescatados_der) };
-            }
+            return { n_equipos_izq + n_equipos_der, arbol.root() + max(max_rescatados_izq, max_rescatados_der) };
         }
+        
     }
     
 
@@ -48,7 +44,7 @@ pair<int, int> resolver(const BinTree<T> &arbol) {
 // configuración, y escribiendo la respuesta
 void resuelveCaso() {
     // leer los datos de la entrada
-    BinTree<char> arbol = read_tree<char>(cin);
+    BinTree<int> arbol = read_tree<int>(cin);
 
     auto[num_equipos, max_excursionistas] = resolver(arbol);
     // escribir sol

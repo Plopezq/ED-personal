@@ -18,6 +18,7 @@ string resolver(string frase) {
     stack<char> pila;
     //PRIMERA FASE
     for (int i = 0; i < frase.length(); i += 2) {
+        //hacer con modulo
         cola.push(frase[i]);
         pila.push(frase[i + 1]);
     }
@@ -49,7 +50,6 @@ string resolver(string frase) {
             aux.push(cola.front());
             cola.pop();
         }
-
     }
 
     return resultado;

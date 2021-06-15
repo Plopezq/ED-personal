@@ -13,6 +13,7 @@ using namespace std;
 template <typename T>
 T resolver(const BinTree<T> &arbol) {
     //ARBOL NO VACIO
+    if (arbol.empty()) return {};
     if (arbol.left().empty() && arbol.right().empty()) {//es una hoja
         return arbol.root();
     }
@@ -34,13 +35,21 @@ bool resuelveCaso() {
 
     if (tipo == 'N') {
         BinTree<int> arbol = read_tree<int>(cin);
-        int sol = resolver(arbol);
-        cout << sol << endl;
+        if (arbol.empty()) { cout << endl; }
+        else {
+            int sol = resolver(arbol);
+            cout << sol << endl;
+        }
     }
     else {//Tipo = P
-        BinTree<char> arbol = read_tree<char>(cin);
-        char sol = resolver(arbol);
-        cout << sol << endl;
+        BinTree<string> arbol = read_tree<string>(cin);
+        if (arbol.empty()) {
+            cout << endl;
+        }
+        else {
+            string sol = resolver(arbol);
+            cout << sol << endl;
+        }
     }
 
     return true;
