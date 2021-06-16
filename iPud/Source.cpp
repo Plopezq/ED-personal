@@ -21,8 +21,8 @@ public:
 		//else, la anyadimos al ipud
 		ipud[song].artista = artist;
 		ipud[song].duracion = duration;
-		ipud[song].itListaRecientes = cancionesRecientes.end(); 
-		ipud[song].itListaReproduccion = listaReproduccion.end();
+		//ipud[song].itListaRecientes = cancionesRecientes.end(); 
+		//ipud[song].itListaReproduccion = listaReproduccion.end();
 	}
 
 	bool addToPlaylist(const string& song) {
@@ -47,7 +47,7 @@ public:
 	}
 
 	int totalTime() const{
-
+		return 1;
 	}
 
 	//list<string> recent(const int N) {
@@ -69,12 +69,12 @@ private:
 		list<infoCancion>::iterator itListaReproduccion;
 		//puntero a la lista de recientes
 		list<infoCancion>::iterator itListaRecientes;
-		infoCancion() : duracion(0) {};
+		infoCancion() : duracion(0){};
 	};
 	unordered_map<string, infoCancion> ipud;
 	list<infoCancion> cancionesRecientes; //lista de canciones recientes
 	list<infoCancion> listaReproduccion;
-	int totalTime;
+	//int totalTime;
 };
 
 
