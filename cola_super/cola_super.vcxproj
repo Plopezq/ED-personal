@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{555f1520-dce0-47c6-ae2c-40b64523fd71}</ProjectGuid>
-    <RootNamespace>consultoriomedico</RootNamespace>
+    <ProjectGuid>{b36b712f-e2d1-477c-944a-d3c9fbb356c1}</ProjectGuid>
+    <RootNamespace>colasuper</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -144,9 +144,6 @@
   <ItemGroup>
     <None Include="sample.in" />
     <None Include="sample.out" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="fecha.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
